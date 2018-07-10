@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> new document </title>
+	<meta name="generator" content="editplus" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<style type="text/css">
+		*{margin:0px;padding:0px;}
+		#menu{
+			font-size:12px;
+			list-style-type:none;
+			width:100px;text-align:center;
+		}
+		#m1,#m2,#m3,#m4{
+			border:1px solid #666;
+			height:20px;line-height:20px;
+			background:#ccc;width:98px;
+		}
+		#m1_sub,#m2_sub,#m3_sub,#m4_sub{
+			display:inline-block;
+		}
+		ul#menu li ul li{
+			border:1px solid #999;
+			height:20px;line-height:20px;
+			background:#efefef;list-style-type:none;
+		}
+	</style>
+	<script type="text/javascript">
+		function toggleMenu(){
+			var aTitle=new Array();
+			if(arguments.length==0) return false;
+	//获取对象
+	var $=function(id){
+		return document.getElementById?document.getElementById(id):document.all[id];
+	}
+	//将获取参数转换为数组
+	for(var i=0;i<arguments.length;i++){
+		aTitle[aTitle.length]=arguments[i];
+	}
+	for(var i=0;i<aTitle.length;i++){
+		$(aTitle[i]+"_sub").style.display="none"; //初始化为所有菜单隐藏
+		//添加事件
+		$(aTitle[i]).onclick=function(){
+		toggleIt(); //主处理函数
+		}
+	}
+	var toggleIt=function(){
+		var evt=window.event||toggleIt.caller.arguments[0];
+		var evtElm=evt.srcElement||evt.target;
+			for(var i=0;i<aTitle.length;i++){
+				if(evtElm&&evtElm.id!=aTitle[i]){
+					$(aTitle[i]+"_sub").style.display="none";
+				}else{ //点击对象如果就是当前遍历对象
+					$(aTitle[i]+"_sub").style.display=($(aTitle[i]+"_sub").style.display=="none"?"":"none");
+					}
+		}
+	}
+}
+window.onload=function(){
+//调用方法，在参数中逐个加入主标题id，注意，对应内容必须为“主标题id+"_sub"”
+toggleMenu("m1","m2","m3","m4");
+}
+</script>
+</head>
+<body>
+	<ul id="menu">
+		<li id="m1">菜单1</li>
+		<li id="m1_sub">
+			<ul>
+				<li>11111111111</li>
+				<li>11111111111</li>
+			</ul>
+		</li>
+		<li id="m2">菜单2</li>
+		<li id="m2_sub">
+			<ul>
+				<li>22222222222</li>
+				<li>22222222222</li>
+			</ul>
+		</li>
+		<li id="m3">菜单3</li>
+		<li id="m3_sub">
+			<ul>
+				<li>33333333333</li>
+				<li>33333333333</li>
+			</ul>
+		</li>
+		<li id="m4">菜单4</li>
+		<li id="m4_sub">
+			<ul>
+				<li>44444444444</li>
+				<li>44444444444</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
