@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+	ul{
+		list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    background-color: #333;
+	    overflow: hidden;
+
+	}
+	
+	li{
+		float: left;
+	}
+	
+	li a,.dropbtn{
+		display: inline-block;
+		text-decoration: none;
+		color: white;
+		padding: 14px 16px;
+		text-align: center;
+
+	}
+	
+	li a:hover,.dropbtn:hover{
+		background-color: #111;
+	}
+	
+	.dropdown{
+		display: inline-block;
+	}
+	.dropdown-content{
+		display: none;
+		background-color: #f9f9f9;
+		width: 160px;
+		position: absolute;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+	}
+
+	.dropdown-content a{
+		display: block;
+		padding: 12px 16px;
+		color: black;
+		text-decoration: none;
+
+
+	}
+
+	.dropdown:hover .dropdown-content{
+		display: block;
+	}
+
+	.dropdown-content a:hover {
+		background-color: #f1f1f1
+	}
+	</style>
+</head>
+<body>
+	<ul>
+		  <li><a class="active" href="#home">主页</a></li>
+		  <li><a href="#news">新闻</a></li>
+		  <div class="dropdown">
+		    <a href="#" class="dropbtn">下拉菜单</a>
+		    <div class="dropdown-content">
+		      <a href="#">链接 1</a>
+		      <a href="#">链接 2</a>
+		      <a href="#">链接 3</a>
+		    </div>
+		  </div>
+	</ul>
+	
+
+
+</body>
+</html>

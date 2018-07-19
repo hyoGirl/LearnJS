@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+	.btn{
+		background-color: #4CAF50;
+	    color: white;
+	    padding: 15px;
+	    font-size: 16px;
+	   	cursor: pointer;
+	    border: none;
+	}
+
+	.main{
+		position: relative;
+
+	}
+	
+	.content{
+		display: none;
+		position: absolute;
+		min-width: 100px;
+		background-color: #f9f9f9;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	}
+
+	.content a{
+		/* a标签要变成块元素 */
+		display: block;
+		color: black;
+		text-decoration: none;
+		padding: 10px 10px;		
+	}
+	
+	.main:hover .content{
+		display: block;
+	}
+	.content a:hover{
+		background-color: #645C51;
+	}
+
+	.main:hover .btn{
+		background-color: #3e8e41;
+	}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<button class="btn">下拉菜单</button>
+		<div class="content">
+			<a href="https://www.baidu.com/" target="_blank">百度</a>
+			<a href="https://www.mi.com" target="_blank">小米</a>
+			<a href="https://www.jd.com/" target="_blank">京东</a>
+		</div>
+	</div>
+	
+
+</body>
+</html>
