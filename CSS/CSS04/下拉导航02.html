@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+	ul{
+		padding: 0;
+		margin:0;
+		background-color: #333;
+		/* overflow: hidden; */
+	}
+	li{
+		list-style: none;
+		float: left;
+	}
+	a{
+		text-decoration: none;
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+	}
+	
+	
+
+	.box{
+		display: inline-block;
+	}
+	
+	.content{
+		display: none;
+		 position: absolute;  
+		 /* 这里为什么要用浮动？ */
+		width: 160px;
+		background-color: #f9f9f9;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+	}
+	.content a{
+		
+		display: block;
+		/* display: none;   这个不能给a标签，只能是给div???*/
+	}
+
+	.box:hover .content{
+		
+		display: block;
+	}
+
+	li:hover,.box:hover{
+		background-color: #111;
+	}
+
+	.content a:hover {
+		background-color: #f1f1f1;
+	}
+	</style>
+</head>
+<body>
+	<ul class="main">
+		<li><a class="active" href="#home">主页</a></li>
+		<li><a href="#news">新闻</a></li>
+
+			<div class="box">
+				<a href="#" class="good">广告</a>
+				<div class="content">
+					<a href="#">下拉菜单01</a>
+					<a href="#">下拉菜单02</a>
+					<a href="#">下拉菜单03</a>
+				</div>
+			</div>
+
+	</ul>
+</body>
+</html>
