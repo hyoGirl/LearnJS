@@ -26,13 +26,14 @@
 	
 
 	.box{
+		
 		display: inline-block;
 	}
 	
 	.content{
 		display: none;
 		 position: absolute;  
-		 /* 这里为什么要用浮动？ */
+		 /* 这里为什么要用定位？ */
 		width: 160px;
 		background-color: #f9f9f9;
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -56,13 +57,17 @@
 	.content a:hover {
 		background-color: #f1f1f1;
 	}
+
+
+
+
+
 	</style>
 </head>
 <body>
 	<ul class="main">
 		<li><a class="active" href="#home">主页</a></li>
 		<li><a href="#news">新闻</a></li>
-
 			<div class="box">
 				<a href="#" class="good">广告</a>
 				<div class="content">
@@ -70,6 +75,16 @@
 					<a href="#">下拉菜单02</a>
 					<a href="#">下拉菜单03</a>
 				</div>
+			</div>
+
+			<div class="test">
+				<a href="#" class="good2">业务</a>
+				<!-- <div class="content2">
+					<a href="#">下拉菜单01</a>
+					<a href="#">下拉菜单02</a>
+					<a href="#">下拉菜单03</a>
+				</div> -->
+
 			</div>
 
 	</ul>

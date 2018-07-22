@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+
+	.head,.foot{
+		width: 300px;
+		height: 100px;
+		
+	}
+	
+	.head{
+		background-color: green;
+	}
+
+	.foot{
+		background-color: black;
+	}
+
+	.main{
+		margin: 5px 0px;
+		width: 300px;
+		/* height: 200px;  */
+		background-color: blue;
+	}
+	
+	.left,.right{
+		width: 80px;
+		height: 200px;
+	}
+	.left{
+		background-color: orange;
+		float: left;
+
+	}
+
+	.right{
+		background-color: green;
+		float: right;
+	}
+
+	.content{
+		width: 140px;
+		height: 200px;
+		background-color: #333;
+		float: left;
+	}
+
+
+	.content-top,.content-bot{
+		width: 140px;
+		height: 100px;
+	}
+	
+	.content-top{
+		background-color: #660000;
+	}
+	.content-bot{
+		background-color: #006600;
+	}
+
+	.clearfix:after{
+			content:".";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+			clear:both;
+		}
+		/*兼容ie浏览器*/
+		.clearfix{
+			zoom:1;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="head"></div>
+		<div class="main clearfix">
+			<div class="left"></div>
+			<div class="content">
+
+				<div class="content-top"></div>
+	 			<div class="content-bot"></div>
+
+			</div>
+			<div class="right"></div>
+		</div>
+		<div class="foot"></div>
+</body>
+</html>

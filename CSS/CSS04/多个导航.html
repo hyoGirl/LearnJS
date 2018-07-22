@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+
+	ul{
+		margin: 0;
+		padding: 0;
+		background-color: #333;
+	}
+
+	li{
+		float: left;
+		display: inline-block;
+		list-style: none;
+		
+	}
+
+	a{
+		text-decoration: none;
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+	}
+
+	.box1{
+		  display: inline-block;  
+	}
+	.content{
+		display: none;
+		position: absolute;
+		width: 160px;
+		background-color: green;
+	}
+
+	/* 
+	这个地方需要变成行内块，是因为行内块的大小是由包含的元素撑大的，如果不变化，那么这个a就是采用了整个ul的宽度，就会居中显示 
+	同时，这个div还必须存在，因为这个div可以
+
+
+	*/
+	.box2{
+		display: inline-block;  
+	}
+	
+	.con-work{
+		display: none;
+		/* 
+		为什么要使用定位？
+		因爲定位能够呈现一种浮动的效果，鼠标移动就会出现或者消失，并且脱离了文档流，不会对后续下面或者旁边的内容有什么影响，
+		不占据空间	
+		 */
+		position: absolute;
+		width: 160px;
+		background-color: green;
+	}
+
+
+	.box1:hover .content{
+		display: block;
+	}
+
+	.content a:hover {
+		background-color: #f1f1f1
+	}
+	
+
+	.box2:hover .con-work{
+		display: block;
+	}
+
+	.con-work a:hover {
+		background-color: #f1f1f1
+	}
+
+
+
+	li a:hover,.news:hover,.work:hover{
+		background-color: #111;
+	}
+
+	</style>
+
+
+
+</head>
+<body>
+	<ul>
+		<li><a href="#">招商</a></li>
+		<li><a href="#">投资</a></li>
+		<div class="box1">
+			<a href="#" class="news">广告</a>
+				<div class="content">
+						<a href="#">下拉菜单01</a>
+						<a href="#">下拉菜单02</a>
+						<a href="#">下拉菜单03</a>
+				</div>
+
+		</div>
+		<div class="box2">
+			<a href="#" class="work">业务</a>
+				<div class="con-work">
+						<a href="#">下拉菜单04</a>
+						<a href="#">下拉菜单05</a>
+						<a href="#">下拉菜单06</a>
+				</div>
+
+		</div> 
+	</ul>
+</body>
+</html>
