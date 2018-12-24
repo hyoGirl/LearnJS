@@ -1,0 +1,18 @@
+.header{
+    height: 60px;
+    width: 100%;
+    background-color: black;
+}
+.banner{
+    margin-top: 60px;
+    height: 860px;
+    background-color: yellow;
+}
+.content{
+    height: 1883px;
+    background-color: blue;
+}
+.footer{
+    height: 396px;
+    background-color: red;
+}

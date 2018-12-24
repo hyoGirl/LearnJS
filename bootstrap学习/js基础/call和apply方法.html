@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<p>  call和apply是预先定义的函数方法，可以使用它们来调用函数，但是传值有点不同。   </p>
+		<p id="call">call方法使用的结果：</p>
+		<p id="apply"> apply方法使用的结果</p>	
+		<script type="text/javascript">
+			
+			function test(a,b){
+				return a*b;
+			}
+			var data=test.call(this,10,2);
+			document.getElementById("call").innerHTML=data;
+			var data2=test.apply(this,new Array(10,2));
+			document.getElementById("apply").innerHTML=data2;
+
+		</script>
+</body>
+</html>

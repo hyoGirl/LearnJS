@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p >函数作为方法来调用</p>
+	<p id="demo"></p>
+	<script type="text/javascript">
+		
+		var pp={
+			name:"AA",
+			show:function(){
+				return this.name;
+			}
+		}
+		
+		document.getElementById("demo").innerHTML=pp.show();
+
+	</script>
+</body>
+</html>

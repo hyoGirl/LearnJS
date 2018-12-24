@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>函数可以作为一种变量来保存，函数表达式,没有括号的时候，是函数表达式</p>
+	<p id="demo"></p>
+	<p>函数存储在变量中，不需要通过变量名来调用，有括号的时候，是函数执行结果</p>
+	<p id="demo1"></p>
+	<script type="text/javascript">		
+	var x=function(a,b){
+			return a*b;
+	}
+	document.getElementById("demo").innerHTML=x
+
+
+
+	
+	document.getElementById("demo1").innerHTML=x(3,4);
+	</script>
+</body>
+</html>

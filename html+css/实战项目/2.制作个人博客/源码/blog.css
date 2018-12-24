@@ -1,0 +1,172 @@
+body { 
+  background-color: #b5a789;
+  font-family:      Georgia, "Times New Roman", Times, serif;
+  font-size:        small;
+  margin:           0px;
+}
+
+header.top {
+  background-color: #675c47;
+  margin: 10px 10px 0px 10px;
+  height:           108px;
+}
+
+header.top img#headerSlogan {
+	float: right;
+}
+
+
+div#tableContainer {
+	display: table;
+	border-spacing: 10px;
+}
+
+div#tableRow {
+	display: table-row;
+}
+
+section#drinks {
+    display: table-cell;
+    background-color: #efe5d0;
+    width: 20%;
+    padding: 15px;
+    vertical-align: top;
+}
+
+/* added section#blog for blog */
+section#main, section#blog {
+  display: table-cell;
+  background:       #efe5d0 url(素材/background.gif) top left;
+  font-size:        105%;
+  padding:          15px;
+  vertical-align: top;
+}
+
+aside {
+  display: table-cell;
+  background:       #efe5d0 url(素材/background.gif) bottom right;
+  font-size:        105%;
+  padding:          15px;
+  vertical-align: top;
+}
+
+footer {
+  background-color: #675c47;
+  color:            #efe5d0;
+  text-align:       center;
+  padding:          15px;
+  margin: 0px 10px 10px 10px;
+  font-size:        90%;
+}
+
+h1 {
+  font-size:        120%;
+  color:            #954b4b;
+}
+
+h2 { 
+  font-size: 110%; 
+}
+
+.slogan { 
+  color: #954b4b;
+}
+
+.beanheading {
+  text-align:       center;
+  line-height:      1.8em;
+}
+
+a:link {
+  color:            #b76666;
+  text-decoration:  none;
+  border-bottom:    thin dotted #b76666;
+}
+a:visited {
+  color:            #675c47;
+  text-decoration:  none;
+  border-bottom:    thin dotted #675c47;
+}
+
+
+nav {
+  background-color: #efe5d0;
+	margin: 10px 10px 0px 10px;
+}
+nav ul {
+	margin: 0px;
+	list-style-type: none;
+	padding: 5px 0px 5px 0px;
+}
+nav ul li {
+	display: inline;
+	padding: 5px 10px 5px 10px;
+}
+nav ul li a:link, nav ul li a:visited {
+	color: #954b4b;
+	border-bottom: none;
+	font-weight: bold;
+
+/*
+	text-shadow: 1px 1px 3px #e2c2c2; 
+	text-transform: uppercase;
+*/
+}
+nav ul li.selected {
+	background-color: #c8b99c;
+}
+
+.main-box{
+  background-color: white;
+  width:208px;
+  height:384px;
+  border:1px solid #CECECE;
+  margin:10px auto;
+}
+
+.title{
+  height:25px;
+  background-color:#ECEDEE;
+  line-height:25px;
+  font-size:14px;
+  font-family:微软雅黑;
+  padding-left:9px;
+}
+
+.photo{
+  width:180px;
+  height:180px;
+  border:1px solid #CECECE;
+  margin:10px auto;
+        }
+
+.wb{
+  margin:0 auto;
+  text-align:center;
+  border-bottom:1px dotted #D1D1D1;
+  padding-bottom:10px;
+}
+      
+.wb input{
+  width:68px;
+  height:23px;
+  margin-top:10px;
+  background-image:url("vb.jpg");
+  background-repeat:no-repeat;
+  background-color:#EEEEF2;
+  outline-style:none;
+}
+      
+.friend{
+  margin:0px;
+  text-align:center;
+  padding:20px 0px 0px 0px;
+}
+
+.friend input{
+  margin: 3px;
+  width:67px;
+  height:21px;
+  outline-style:none;
+  margin-bottom:5px;
+}

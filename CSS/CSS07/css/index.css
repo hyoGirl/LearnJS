@@ -1,0 +1,118 @@
+/* main部分开始 */
+
+.main-slide{
+	float: left;
+	margin: 12px 0 0 220px;
+	width: 730px;
+	height: 454px;
+	position: relative;
+ }
+
+.main-slide ul{
+	position: absolute;
+	left: 50%;
+	margin-left: -66px;
+	bottom:10px;
+}
+
+.main-slide li{
+	float: left;
+	width: 18px;
+	height: 18px;
+	text-align: center;
+	color: #fff;
+	line-height: 18px;
+	border-radius: 50%;
+	margin: 0 2px;
+	cursor: pointer;
+	background-color: #3E3E3E;
+}
+
+.main-news{
+	float: right;
+
+}
+
+
+.main-news-top{
+	margin: 12px 0 5px 0 ;
+	height: 372px;
+	width: 247px;
+		overflow: hidden;
+	border: 1px solid #E4E4E4;
+}
+
+
+.main-news-top-fast{
+	height: 163px;
+	border: 1px dashed #E4E4E4;
+}
+
+.main-news-top-fast-title{
+	
+	line-height: 32px;
+	height: 32px;
+	border-bottom: 1px dotted  #E8E8E7;
+}
+
+
+.main-news-top-fast-title h2{
+	padding-left: 15px;
+	float: left;
+	font: 16px/32px "microsoft yahei";
+
+}
+
+.main-news-top-fast-title a{
+	padding-right: 15px;
+	float: right;
+}
+
+
+.main-news-top-fast-content{
+	padding: 5px 0 0 15px;
+}
+
+
+.main-news-top-fast-content li{
+	height: 24px;
+	line-height: 24px;
+}
+
+
+.arrow a{
+	margin-top: -31px;
+	position: absolute;
+	top:50%;
+	width: 28px;
+	height: 62px;
+	text-align: center;
+	opacity: 0.4;
+	color: #fff;
+	font: 400 22px/62px "simsun"; 
+	background-color: pink;
+}
+
+.arrow-left{
+	left: 0;
+
+}
+
+.arrow-right{
+	right: 0;
+
+}
+
+.main-news-top-money li{
+	float: left;
+	width: 62px;
+	height: 70px;
+	border: 1px solid #E8E8F7;
+	/* 取消重复边线 */
+	margin-left: -1px;
+	margin-top: -1px;
+	border-top: 0;
+}
+.main-news-top-money ul{
+	width: 260px;
+}

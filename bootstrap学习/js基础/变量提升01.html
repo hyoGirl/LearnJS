@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>变量提升，只会针对函数申明和变量申明。函数表达式以及函数初始化赋值不会提升</p>
+
+
+	<script type="text/javascript">
+		
+
+		function foo(){
+
+			var x="hello"+"   "+y;
+			console.log(x);
+			var y=sss;
+		}
+
+		foo();
+
+		//在js语法中。最后结果变成了
+		/*
+		function foo() {
+		    var y; // 提升变量y的申明，此时y为undefined
+		    var x = 'Hello, ' + y;
+		    console.log(x);
+		    y = 'Bob';
+		}
+		*/
+
+	</script>
+</body>
+</html>

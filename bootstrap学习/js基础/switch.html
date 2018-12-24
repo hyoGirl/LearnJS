@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<button onclick="test()">点击</button>
+	<p id="demo"></p>
+	<script type="text/javascript">
+		
+		function test(){
+			var x;
+			var t=new Date().getDay();
+
+			switch(t){
+
+				case 0:x="今天是星期日";
+		    	break;
+		 		case 1:x="今天是星期一";
+		        break;
+		  		case 2:x="今天是星期二";
+		        break;
+		        case 3:x="今天是星期三";
+		   	 	break;
+		  		case 4:x="今天是星期四";
+		    	break;
+		  		case 5:x="今天是星期五";
+		        break;
+		  		case 6:x="今天是星期六";
+		    	break;
+			}
+
+			document.getElementById('demo').innerHTML=x;
+
+		}
+
+
+
+	</script>
+</body>
+</html>

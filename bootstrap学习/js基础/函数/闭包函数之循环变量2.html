@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>使用匿名函数来完成循环变量</p>
+
+	<script type="text/javascript">
+		
+		function count(){
+			var arr=[];
+			for(var i=1;i<=3;i++){
+				arr.push(function(i){
+					return i*i;
+				}(i))
+			}
+			return arr;
+		}
+		var result=count();
+		console.log(result)
+
+	</script>
+</body>
+</html>

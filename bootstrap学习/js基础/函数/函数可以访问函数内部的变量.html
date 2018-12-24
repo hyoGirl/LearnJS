@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>函数可以访问函数内部的变量</p>
+	<p id="demo"></p>
+	<button onclick="test()">点击我</button>
+	<script type="text/javascript">		
+		function test(){
+			var a=19;
+			document.getElementById("demo").innerHTML=a;
+		}
+	</script>
+</body>
+</html>

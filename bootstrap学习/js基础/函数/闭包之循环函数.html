@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>闭包函数调用之循环变量</p>
+	<script type="text/javascript">
+		function count() {
+		    	var arr = [];
+			    for (var i=1; i<=3; i++) {
+			        arr.push(function () {
+			            return i * i;
+			        });
+			    }
+			    return arr;
+		}
+    // 每次循环都是调用新的函数，但是这个函数并没有立刻执行，数组里面保存的就是这个函数。
+	var results = count();
+	console.log(results)
+
+	var f1 = results[0];
+	var f2 = results[1];
+	var f3 = results[2];
+	//这个函数需要再次调用才能执行
+	console.log(f1)
+
+	console.log("------------------------------")
+	function count1() {
+		    	var arr = [];
+			    for (var i=1; i<=3; i++) {
+			        arr.push(i);
+			    }
+			    return arr;
+		}
+
+var results1 = count1();
+	console.log(results1)
+
+	
+
+
+	</script>
+</body>
+</html>

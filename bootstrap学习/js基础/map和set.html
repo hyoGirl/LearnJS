@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>使用map和set来快速获取想要的</p>
+
+	<script type="text/javascript">
+		
+		var mm=new Map([["name","zhangsan"],["age",11]]);
+
+		mm.set("sex","女");
+
+		console.log(mm.get("name"));
+
+		for(var x of mm){
+			console.log(x);
+		}
+
+		
+
+
+		var ss=new Set([1, 2, 3, 3, '3']);	
+
+		ss.add(4);
+
+		for(var x of ss){
+			console.log( x+" "+ typeof x)	
+
+		}
+
+
+
+
+
+
+	</script>
+</body>
+</html>

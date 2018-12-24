@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>高阶函数，其实就是把一个函数作为一个参数传递到其他函数中</p>
+
+	<script type="text/javascript">
+		
+	function t1(a,b){
+		return a+b;
+	}
+
+	function t2(a,b){
+		return  a-b;
+	}
+	
+	function test(x,y,f){
+		return f(x,y);
+	}
+
+	//此时是调用了test函数，但是传入的其他参数是函数表达式
+	console.log(test(1,2,t1));
+
+
+
+	</script>
+
+
+</body>
+</html>

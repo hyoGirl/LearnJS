@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>使用原型链来创建一个对象</p>
+
+	<script type="text/javascript">
+		
+	function Student(name,age){
+		this.name=name;
+		this.age=age;
+	}
+
+	Student.prototype={
+
+		hello:function(){
+			console.log("hello"+ " "+this.name);
+		}
+
+	}
+
+	function createStudent(name,age){
+		return new Student(name,age);
+	}
+
+	createStudent("zhangsan").hello();
+
+	var a=11;
+	var s=new a
+	</script>
+</body>
+</html>

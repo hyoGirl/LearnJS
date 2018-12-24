@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function Student(name){
+			this.name=name;
+			this.hello=function(){
+				console.log("hello "+ this.name);
+			}
+		}
+
+		var xiao=new Student("AA");
+		console.log(xiao.name);
+		xiao.hello();
+
+
+
+	</script>
+</body>
+</html>

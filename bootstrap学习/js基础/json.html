@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<p>使用json.parse将一个 JSON 字符串转换为 JavaScript 对象。，Json.stringify是 JavaScript 值转换为 JSON 字符串</p>	
+<script type="text/javascript">
+	
+
+
+	var data= '{ "sites" : [' +
+	'{ "name":"Runoob" , "url":"www.runoob.com" },' +
+	'{ "name":"Google" , "url":"www.google.com" },' +
+	'{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+
+
+	var obj=JSON.parse(data);
+
+	console.log(obj);
+
+	console.log(obj.sites[1].name+" "+obj.sites[1].url);
+
+
+
+	var str={"name":"zhangsan","age":12};
+
+
+	ss=JSON.stringify(str);
+
+	console.log("把字符串转换为对象"+ss+ typeof ss)
+
+
+
+
+
+</script>
+
+</body>
+</html>

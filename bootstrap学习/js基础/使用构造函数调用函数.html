@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>使用new 关键字，就是调用了构造函数</p>
+	<script type="text/javascript">
+		
+		function fun(arg1, arg2){
+			this.arg1=arg1;
+			this.arg2=arg2;
+		}
+
+		var x=new fun(aa,bb);
+		console.log(x.arg1);
+
+
+	</script>
+</body>
+</html>

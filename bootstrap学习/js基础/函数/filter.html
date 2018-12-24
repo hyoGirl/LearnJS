@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>使用filter来过滤获取需要的数据.这个方法是基于数组的</p>
+
+	<script type="text/javascript">
+		
+		var arr=[1,2,3,4,5,6];
+
+		var r=arr.filter(function(x){
+			return x % 2 == 0;
+		});
+
+
+		console.log(r);
+
+		console.log("-------------filter接受回调函数----------------------")
+
+		var ss=[1,2,3,3,2];
+
+		//element 就是数组里面的每一个元素，index就是数组下标  self 就是这个数组本身。
+		var d=ss.filter(function(element,index,self){
+
+			return ss.indexOf(element) == index;
+		})
+
+		console.log(d);
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

@@ -344,3 +344,171 @@ s, i, em {
 .footer-top-slogen-icon4 {
     margin-left: 302px;
 }
+
+
+.footer-top-shopping dl{
+
+	float: left;
+	width: 200px;
+
+}
+.footer-top-shopping .last-dl{
+	width: 100px;
+}
+
+.footer-top-shopping dt{
+	height: 34px;
+	line-height: 34px;
+	 font: 400 16px/34px "microsoft yahei";
+}
+
+
+
+.footer-top-shopping dd{
+
+}
+
+.coverage {
+	width: 186px;
+	height: 169px;
+	float: right;
+	margin-right: 40px;
+	padding-left: 17px;
+	background: url("../images/china.png") no-repeat left bottom;
+
+}
+
+ .coverage h3 {
+    height: 34px;
+    font: 400 16px/34px "microsoft yahei";
+}
+
+ .coverage p {
+        padding-top: 8px;
+    }
+.coverage a{
+	float: right;
+}
+
+.footer-bottom{
+	margin-top: 20px;
+	padding: 20px 0 30px;
+	border-top: 1px solid #E5E5E5;
+}
+
+.footer-bottom{
+	text-align: center;
+}
+.footer-bottom-links a{
+
+	 margin: 0 10px;
+
+}
+
+.footer-bottom-copyright{
+	padding: 10px 0;
+}
+.footer-bottom-img a{
+	margin: 0 5px;
+}
+
+.shortcut-nav{
+	height: 44px;
+    width: 100%;
+    border-bottom: 2px solid #B1191A;
+}
+
+.shortcut-nav-menu{
+	width: 210px;
+	height: 44px;
+	float: left;
+	z-index: 1;
+	/* 为什么使用 */
+	position: relative;
+}
+
+.shortcut-nav-menu-all a{
+	color: #fff;
+	width: 190px;
+	display: inline-block;
+	line-height: 44px;
+	padding: 0 10px;
+    background-color: #B1191A;
+    font: 400 15px/44px "microsoft yahei";
+
+} 
+
+
+.shortcut-nav-menu-one {
+	margin-top: 2px;
+	height: 465px;
+	background:#C81623;
+	border-left: 1px solid #B1191A;
+	border-bottom: 1px solid #B1191A;
+
+}
+
+.shortcut-nav-menu-one div{
+	height: 31px;
+	padding: 0px 10px;
+	font:400 14px/31px "microsoft yahei";
+
+}
+
+
+.shortcut-nav-menu-one div:hover{
+		
+	background: #fff;
+
+}
+
+.shortcut-nav-menu-one div:hover a{
+	
+ 	color: #C81623;
+
+}
+.shortcut-nav-menu-one  a{
+	color: #fff;
+}
+
+.shortcut-nav-menu-one  h3{
+	float: left;
+}
+
+.shortcut-nav-menu-one i{
+	float: right;
+	color: #fff;
+	font: 400 12px/31px "consolas"
+}
+
+.shortcut-nav-items{
+	width: 730px;
+    height: 44px;
+    float: left;
+}
+
+
+.shortcut-nav-items ul li{
+	float: left;
+
+
+}
+.shortcut-nav-items li a{
+	display: inline-block;
+    height: 44px;
+    padding: 0 20px;
+    color: #333;
+    font: 400 16px/44px "microsoft yahei";
+}
+
+
+.shortcut-nav-img {
+    width: 200px;
+    height: 44px;
+    float: right;
+    margin-top: -10px;
+    margin-right: 50px;
+    /*position: relative;*/
+    /*left: -50px;*/
+    /*top: -10px;*/
+}

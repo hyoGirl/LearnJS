@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>reduce方法作用于数组。一个函数必须接受两个参数，并且把第一次计算的结果继续传入当前函数中再次和下一个参数进行同样运算</p>
+
+	<script type="text/javascript">
+		
+		var ss=[1,2,4,5,7];
+
+
+		var data=	ss.reduce(function(x,y){
+				return x+y;
+			});
+
+
+		console.log("数组求和的结果为： "+data)
+
+
+	</script>
+
+
+</body>
+</html>

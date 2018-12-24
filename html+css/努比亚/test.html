@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            border: 10px solid red;
+            margin: 50px auto;
+            /*text-align: center;*/
+        }
+        /*
+        如果图片的宽度大于父元素的宽度, 使用
+        text-align: center;是无法让图片居中的
+
+        所以如果图片的宽度大于父元素的宽度, 我们可以使用定位流来居中图片
+        */
+        div img{
+            /*width: 200px;*/
+            /*margin: 0 auto;*/
+
+            /*
+            position: relative;
+            left: 50%;
+            margin-left: -532px;
+            */
+
+            /*奇淫技巧
+            注意点:
+            需要配合text-align: center;使用*/
+            margin: 0 -100%;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="father">
+    <img src="images/video1.jpg" alt="">
+</div>
+</body>
+</html>
