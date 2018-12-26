@@ -1,0 +1,76 @@
+<div class="page-header">
+	<h1>Edit TestTask</h1>
+</div>
+<!-- /.page-header -->
+<div class="row" id="wrapper">
+	<div class="col-xs-12" id="cell">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<div class="controls">
+					<label id="taskNamelabel" for="taskName" class="col-sm-2"><b>Task name</b></label> 
+					<input type="text" class="col-xs-8 col-sm-5" id="taskName" ng-model="taskName" placeholder="Input Task name"></input>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="controls">
+					<label id="desctiptionlabel" for="desctiption" class="col-sm-2"><b>Task description</b></label> 
+					<input type="text" class="col-xs-8 col-sm-5" id="desctiption" ng-model="taskDescription" placeholder="Input Task description"></input>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="modal-footer" style='text-align: center'>
+	<button type="submit" class="btn btn-primary" ng-click="saveTask()">&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;</button>
+	&nbsp;&nbsp;&nbsp;
+	<button id="cancelButton" type="button" class="btn" ng-click="cancelButton()" data-dismiss="modal">Close</button>
+</div>
+
+<input type="text" id="scriptSearchCatagory" style="margin-top: 3px;width: 20%" class="span2 typeahead" name="scriptCatagory" placeholder="Input TestPlan Name"></input>
+<button type="submit" class="btn btn-primary" ng-click="query()">查询</button>
+<div class="table-responsive">
+   <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+		<thead>
+			<tr>
+				<th class="" style="padding-right: 0px">
+				 	<input type="checkbox" ng-model="allcheck" ng-click="checkall()"/>选择</th>
+				<th>Case ID</th>
+				<th>Case Name</th>
+				<th>Case Describe</th>
+				<th>Case User</th>
+			</tr>
+		</thead>
+		<tbody>
+			 <tr ng-repeat="entity in items">
+				<td><input type="checkbox" ng-model="entity.check" ng-click="chooseCurrent(entity)"/></td>
+				<td>{{entity.id}}</td>
+				<td>{{entity.planName}}</td>
+				<td>{{entity.planDescribe}}</td>
+				<td>{{entity.createUser}}</td>
+			</tr> 
+		</tbody>
+	</table>
+		<nav>
+	        <ul class="pagination">
+	            <li>
+	                <a ng-click="Previous()">
+	                    <span>上一页</span>
+	                </a>
+	            </li>
+	            <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" >
+	                <a ng-click="selectPage(page)" >{{ page }}</a>
+	            </li>
+	            <li>
+	                <a id="nextPage" ng-click="Next()">
+	                    <span>下一页</span>
+	                </a>
+	            </li>
+	            <li>
+	                <a>
+	                    <span id="totalPage">总页数</span>
+	                </a>
+	            </li>
+	        </ul>
+      </nav>
+</div>

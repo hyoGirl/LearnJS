@@ -1,0 +1,45 @@
+<!-- <select class="span1 typeahead" name="projectGroupName"  onchange="checkVerifyType();"> -->
+
+<select class="span1 typeahead" name="projectGroupName">
+		<option value="projectGroup">Project Group Name</option>
+		<option ng-repeat="item in projectGroups track by $index" value="{{item.id}}">{{item.groupName}}</option>
+</select>
+
+<input type="text" id="scriptSearchCatagory" style="margin-top: 3px;width: 20%" class="span2 typeahead" name="scriptCatagory" placeholder="Input Task Name"></input>
+<button type="submit" class="btn btn-primary" ng-click="query()">查询</button>
+<button type="button" class="btn btn-primary" title="Add new TestTask" ng-click="addTaskPlanButton()">Add</button>
+<div class="table-responsive">
+    <table id="sample-table-2" class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task Name</th>
+                <th>Description</th>
+                <th>CreateTime</th>
+                <th>UpdateTime</th>
+                <th>User Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="script in list">
+                <td>{{script.id}}</td>
+                <td>{{script.scriptName}}</td>
+                <td>{{script.params}}</td>
+                <td>{{script.description}}</td>
+                <!-- <td>{{script.scriptType}}</td> -->
+                <td>{{script.userName}}</td>
+                <td>{{script.catagory}}</td>
+                <td style="width: 18%">
+                	<a class="green" href="#" title="edit" ng-click="editScriptButton(script)">
+						<i class="icon-pencil bigger-130"></i>					
+					</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+					<a title="remove" ng-click="deleteScript(script)" class="red" href="#">
+						<i class="icon-trash bigger-130"></i>
+					</a>
+											
+				</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
