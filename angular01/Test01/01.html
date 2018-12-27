@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+    <!-- CSS文件 -->
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-table.min.css">
+
+    <!-- js文件 -->
+
+    <!-- 1、Jquery组件引用-->
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<!-- 2、bootstrap组件引用-->
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<!-- 3、 bootstrap-table组件引用-->
+	<script type="text/javascript" src="../js/bootstrap-table.min.js"></script>
+	<!-- 4、显示中文 -->
+	<script type="text/javascript" src="../js/bootstrap-table-zh-CN.js"></script>
+	<!-- 5、引入layer相关的js -->
+	<script type="text/javascript" src="../js/layer/layer.min.js"></script>
+	<script type="text/javascript" src="../js/layui/layui.all.js"></script>
+	<script type="text/javascript" src="../js/layui/layui.js"></script>
+	<script type="text/javascript" src="../js/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../js/angular/angular-route.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-app="app" ng-controller="controller">
+        <!-- 工具栏 -->
+        <div id="toolbar">
+            <button type="button" class="btn btn-success" ng-click="look()">
+                <label class="glyphicon glyphicon-eye-open"></label>
+            </button>
+            <button type="button" class="btn btn-primary" ng-click="add()">
+                <label class="glyphicon glyphicon-plus"></label>
+            </button>
+        </div>
+        <!-- 表格主体-->
+        <table id="table">
+        </table>
+        <!--  提示信息-->
+        <div class="modal fade" id="modal-tool">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <strong>{{tool.title}}</strong> {{tool.content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 查看 -->
+        <div class="modal fade" id="modal-look">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">
+					{{lookUser.name}}
+				</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 新增 -->
+        <div class="modal fade" id="modal-add">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">新增</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input ng-model="addUser.name" type="text" name="addUserName" id="addUserName" class="form-control" value="" required="required" pattern="" title="" placeholder="请输入姓名">
+                        <input ng-model="addUser.gender" type="text" name="addUserGender" id="addUserGender" class="form-control" value="" required="required" pattern="" title="" · placeholder="请输入性别">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" ng-click="add_after()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
