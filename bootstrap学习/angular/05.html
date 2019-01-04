@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="page-header">
+        <h1>Edit TestTask</h1>
+    </div>
+    <!-- /.page-header -->
+    <div class="row" id="wrapper">
+        <div class="col-xs-12" id="cell">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="controls">
+                        <label id="taskNamelabel" for="taskName" class="col-sm-2"><b>Task name</b></label>
+                        <input type="text" class="col-xs-8 col-sm-5" id="taskName" ng-model="taskName" placeholder="Input Task name"></input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="controls">
+                        <label id="desctiptionlabel" for="desctiption" class="col-sm-2"><b>Task description</b></label>
+                        <input type="text" class="col-xs-8 col-sm-5" id="desctiption" ng-model="taskDescription" placeholder="Input Task description"></input>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer" style='text-align: center;height:70px'>
+        <button type="submit" class="btn btn-primary" ng-click="saveTask()">&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;</button>
+        &nbsp;&nbsp;&nbsp;
+        <button id="cancelButton" type="button" class="btn  btn-warning" ng-click="cancelButton()" data-dismiss="modal">Close</button>
+    </div>
+    <div class="input-group col-sm-4" style="margin-left:-12px">
+        <input type="text" id="searchTestPlan" class="form-control" placeholder="Input TestPlan Name" />
+        <span class="input-group-addon" ng-click="queryName()">查询</span>
+    </div>
+    <div ng-app="myApp" class="table-responsive">
+        <script type="text/ng-template" id="headerCheckbox.html">
+            <input type="checkbox" ng-model="demo.checkboxes.checked" class="select-all"/>
+				</script>
+        <div ng-controller="testController as demo">
+            <table ng-table="demo.tableParams" class="table table-condensed table-bordered table-hover table-align">
+                <tr ng-repeat="row in $data" ng-form="rowForm" demo-tracked-table-row="row">
+                    <td header="'headerCheckbox.html'"><input type="checkbox" ng-model="demo.checkboxes.items[row.id]" /></td>
+                    <td style="width: 16%;" title="'id'" filter="{question: 'text'}" sortable="'question'" ng-switch="row.isEditing" ng-class="name.$dirty ? 'bg-warning' : ''" ng-form="name" demo-tracked-table-cell>
+                        <span ng-switch-default class="editable-text"><a href="{{row.id}}">{{row.question}}</a></span>
+                    </td>
+                    <td style="width: 16%;" title="'planName'" filter="{planName: 'select'}" filter-data="demo.planName" sortable="'planName'" ng-switch="row.isEditing" ng-class="planName.$dirty ? 'bg-warning' : ''" ng-form="planName" demo-tracked-table-cell>
+                        <span ng-switch-default class="editable-text">{{row.planName}}</span>
+                    </td>
+                    <td style="width: 16%;" title="'planDescribe'" filter="{planDescribe: 'select'}" filter-data="demo.planDescribe" sortable="'money'" ng-switch="row.isEditing" ng-class="planDescribe.$dirty ? 'bg-warning' : ''" ng-form="planDescribe" demo-tracked-table-cell>
+                        <span ng-switch-default class="editable-text">{{row.planDescribe}}</span>
+                    </td>
+                    <td style="width: 16%;" title="'createUser'" filter="{createUser: 'select'}" filter-data="demo.createUser" sortable="'createUser'" ng-switch="row.isEditing" ng-class="createUser.$dirty ? 'bg-warning' : ''" ng-form="createUser" demo-tracked-table-cell>
+                        <span ng-switch-default class="editable-text">{{row.createUser}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

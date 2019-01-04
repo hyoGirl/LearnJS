@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/ng-table.min.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+<!--     <script type="text/javascript" src="js/angular.min.1.6.10.js"></script> -->
+       <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="js/ng-table.min.js"></script>
+
+
+    <style type="text/css">
+    	
+
+	   .content{
+    	padding: 50px;
+    }
+     
+    .content .head{
+    	margin: 20px;
+    }
+     
+    .main_table .table-align{
+    	text-align: center;
+    }
+
+    </style>
+</head>
+
+
+
+
+<body>
+    <div ng-app="myApp" class="main_table content">
+    	<script type="text/ng-template" id="headerCheckbox.html">
+                <input type="checkbox" ng-model="demo.checkboxes.checked" class="select-all"/>
+		</script>
+        <div ng-controller="demoController as demo">
+            <h2 class="page-header">Angular ngTable: inmemory list</h2>
+            <table ng-table="demo.tableParams" show-filter="true" class="table table-bordered table-striped table-hover table-align">
+                <tr ng-repeat="row in $data track by row.id" ng-form="rowForm" demo-tracked-table-row="row">
+
+                	 <td header="'headerCheckbox.html'"><input type="checkbox" ng-model="demo.checkboxes.items[row.id]" /></td>
+                    <td title="'id'" filter="{id: 'text'}" sortable="'id'">{{row.id}}</td>
+                    <td title="'question'" filter="{question: 'text'}" sortable="'question'">{{row.question}}</td>
+                    <td title="'score'" filter="{score: 'text'}" sortable="'score'">{{row.score}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+	
+(function() {
+
+  var app = angular.module('myApp', ['ngTable']);	
+
+  app.controller("demoController", demoController);
+  demoController.$inject = ["NgTableParams"];
+
+  var data = [{
+					'id': "1",
+					'question': "问题1",
+					'score': "15"
+				}, {
+					'id': "2",
+					'question': "问题2",
+					'score': "20"
+				}, {
+					'id': "3",
+					'question': "问题3",
+					'score': "10"
+				}, {
+					'id': "4",
+					'question': "问题4",
+					'score': "25"
+				}, {
+					'id': "5",
+					'question': "问题5",
+					'score': "20"
+				}];
+
+  function demoController(NgTableParams,$scope) {
+    // tip: to debug, open chrome dev tools and uncomment the following line 
+    //debugger;
+    var self=this;
+
+    self.checkboxes = {
+						checked: false,
+						items: {}
+					};
+    
+    self.tableParams = new NgTableParams({
+      page: 1, // show first page
+      count: 2 // count per page
+     
+    }, {
+      filterDelay: 0,
+      dataset: data ,
+      counts: [5, 10, 20]
+    });
+
+
+  }
+
+})();
+
+
+
+
+</script>
+</html>

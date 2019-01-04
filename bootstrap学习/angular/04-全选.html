@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/ng-table.min.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+<!--     <script type="text/javascript" src="js/angular.min.1.6.10.js"></script> -->
+       <script type="text/javascript" src="js/angular.min.1.6.10.js"></script>
+    <script type="text/javascript" src="js/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="js/ng-table.min.js"></script>
+
+
+    <style type="text/css">
+    	
+
+	   .content{
+    	padding: 50px;
+    }
+     
+    .content .head{
+    	margin: 20px;
+    }
+     
+    .main_table .table-align{
+    	text-align: center;
+    }
+
+    </style>
+</head>
+
+
+
+
+<body>
+  
+
+    HTML JS 
+
+    Result 
+
+EDIT ON
+
+<div ng-app="myApp" class="container-fluid">
+  <script type="text/ng-template" id="headerCheckbox.html">
+    <input type="checkbox" ng-model="demo.checkboxes.checked" class="select-all" value="" />
+  </script>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="page-header">Header cell template - full</h2>
+      <div class="bs-callout bs-callout-info">
+        <h4>Overview</h4>
+        <p>You may customise a table header in a number of ways. This demo shows how to supply your own html template to customize a header cell by adding a "select all" checkbox.</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" ng-controller="demoController as demo">
+      <h3>ngTable directive</h3>
+      <table ng-table="demo.tableParams" class="table table-condensed table-bordered table-striped">
+        <colgroup>
+          <col width="5%"/>
+          <col width="55%"/>
+          <col width="20%"/>
+          <col width="20%"/>
+        </colgroup>
+        <tr ng-repeat="row in $data">
+          <td header="'headerCheckbox.html'"><input type="checkbox" ng-model="demo.checkboxes.items[row.id]" /></td>
+          <td title="'Name'">{{row.name}}</td>
+          <td title="'Age'">{{row.age}}</td>
+          <td title="'Money'">{{row.money}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6" ng-controller="dynamicDemoController as demo">
+      <h3>ngTableDynamic directive</h3>
+      <table ng-table-dynamic="demo.tableParams with demo.cols" class="table table-condensed table-bordered table-striped" >
+        <colgroup>
+          <col width="5%"/>
+          <col width="55%"/>
+          <col width="20%"/>
+          <col width="20%"/>
+        </colgroup>
+        <tr ng-repeat="row in $data">
+          <td ng-repeat="col in $columns" ng-switch="col.field">
+            <input ng-switch-when="selector" type="checkbox" ng-model="demo.checkboxes.items[row.id]" />
+            <span ng-switch-default>{{row[col.field]}}</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+	
+angular.module("myApp", ["ngTable", "ngTableDemos"]);
+
+(function() {
+  "use strict";
+
+  angular.module("myApp").controller("demoController", demoController);
+
+  demoController.$inject = ["NgTableParams", "ngTableSimpleList", "$scope", "$element"];
+
+  function demoController(NgTableParams, simpleList, $scope, $element) {
+    var self = this;
+    self.tableParams = new NgTableParams({}, {
+      dataset: simpleList
+    });
+
+    self.checkboxes = {
+      checked: false,
+      items: {}
+    };
+
+    // watch for check all checkbox
+    $scope.$watch(function() {
+      return self.checkboxes.checked;
+    }, function(value) {
+      angular.forEach(simpleList, function(item) {
+        self.checkboxes.items[item.id] = value;
+      });
+    });
+    
+    // watch for data checkboxes
+    $scope.$watch(function() {
+      return self.checkboxes.items;
+    }, function(values) {
+      var checked = 0, unchecked = 0,
+          total = simpleList.length;
+      angular.forEach(simpleList, function(item) {
+        checked   +=  (self.checkboxes.items[item.id]) || 0;
+        unchecked += (!self.checkboxes.items[item.id]) || 0;
+      });
+      if ((unchecked == 0) || (checked == 0)) {
+        self.checkboxes.checked = (checked == total);
+      }
+      // grayed checkbox
+      angular.element($element[0].getElementsByClassName("select-all")).prop("indeterminate", (checked != 0 && unchecked != 0));
+    }, true);
+  }
+})();
+
+(function() {
+  "use strict";
+
+  angular.module("myApp").controller("dynamicDemoController", dynamicDemoController);
+  dynamicDemoController.$inject = ["NgTableParams", "ngTableSimpleList", "$scope", "$element"];
+
+  function dynamicDemoController(NgTableParams, simpleList, $scope, $element) {
+    var self = this;
+
+    self.cols = [
+      { field: "selector", title: "", headerTemplateURL: "headerCheckbox.html", show: true },
+      { field: "name", title: "Name", show: true },
+      { field: "age", title: "Age", show: true },
+      { field: "money", title: "Money", show: true }
+    ];
+    self.tableParams = new NgTableParams({}, {
+      dataset: simpleList
+    });
+    
+        self.checkboxes = {
+      checked: false,
+      items: {}
+    };
+
+    // watch for check all checkbox
+    $scope.$watch(function() {
+      return self.checkboxes.checked;
+    }, function(value) {
+      angular.forEach(simpleList, function(item) {
+        self.checkboxes.items[item.id] = value;
+      });
+    });
+    
+    // watch for data checkboxes
+    $scope.$watch(function() {
+      return self.checkboxes.items;
+    }, function(values) {
+      var checked = 0, unchecked = 0,
+          total = simpleList.length;
+      angular.forEach(simpleList, function(item) {
+        checked   +=  (self.checkboxes.items[item.id]) || 0;
+        unchecked += (!self.checkboxes.items[item.id]) || 0;
+      });
+      if ((unchecked == 0) || (checked == 0)) {
+        self.checkboxes.checked = (checked == total);
+      }
+      // grayed checkbox
+      angular.element($element[0].getElementsByClassName("select-all")).prop("indeterminate", (checked != 0 && unchecked != 0));
+    }, true);
+  }
+})();
+
+(function() {
+  "use strict";
+
+  angular.module("myApp").run(configureDefaults);
+  configureDefaults.$inject = ["ngTableDefaults"];
+
+  function configureDefaults(ngTableDefaults) {
+    ngTableDefaults.params.count = 5;
+    ngTableDefaults.settings.counts = [];
+  }
+})();
+
+</script>
+</html>
